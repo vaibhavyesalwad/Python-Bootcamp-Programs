@@ -44,7 +44,7 @@ class LinkedList:
             return
         i = 1
         n = self.head
-        while i < pos - 1 and n is not None:
+        while i < pos -1 and n is not None:
             n = n.next
             i += 1
         if n is None:
@@ -81,9 +81,12 @@ class LinkedList:
             print('First node deleted')
             return
         n = self.head
-        while i < pos - 1:
+        while i < pos - 1 and n is not None:
             n = n.next
             i += 1
+        if n is None:
+            print('Index outbound')
+            return
         n.next = n.next.next
         print(f'Node at position {pos} deleted')
 
