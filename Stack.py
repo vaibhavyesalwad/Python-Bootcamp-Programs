@@ -22,9 +22,18 @@ class Stack:
 
     def peek(self):
         if self.top== -1:
+            print('Empty stack so no top')
+            return
+        print(self.arr[self.top])
+
+    def travese_stack(self):
+        if self.top == -1:
             print('Empty stack')
             return
-        print(self.arr[-1])
+        print('Top')
+        for i in self.arr[::-1]:
+            print(i)
+
 
 
 mystack= Stack(size=int(input('Enter size of stack:')))
@@ -35,7 +44,8 @@ while True:
     1. Push 
     2. Pop
     3. Peek
-    4.Exit
+    4. Traverse stack
+    5.Exit
     ''')
 
     choice= input(':>')
@@ -50,6 +60,9 @@ while True:
         mystack.peek()
 
     elif choice== '4':
+        mystack.travese_stack()
+
+    elif choice== '5':
         break
 
     else:
