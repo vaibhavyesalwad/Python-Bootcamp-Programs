@@ -33,7 +33,7 @@ class LinkedList:
         while n.next is not None:
             n = n.next
         n.next = new_node
-        print('New node inserted at end')
+        print(f'New node {data} inserted at end')
 
     def insert_at_position(self, pos, data):
         new_node = Node(data)
@@ -50,26 +50,34 @@ class LinkedList:
         if n is None:
             print('Index outbound')
             return
+        elif n.next is None:
+            n.next = new_node
+            print(f'New node {data} added at position {pos} i.e at end')
+            return
         new_node.next = n.next
         n.next = new_node
-        print(f'New node added at position {pos}')
+        print(f'New node {data} added at position {pos}')
 
     def delete_at_start(self):
         if self.head is None:
             print('Empty list so no element to delete')
             return
+        print(f'First node {self.head.data} deleted')
         self.head = self.head.next
-        print('First node deleted')
 
     def delete_at_end(self):
         if self.head is None:
             print('Empty list so no elements to delete')
             return
         n = self.head
+        if self.head.next is None:
+            self.head = None
+            print('Single node head deleted')
+            return
         while n.next.next is not None:
             n = n.next
+        print(f'Last node {n.next.data} deleted')
         n.next = None
-        print('Last node deleted')
 
     def delete_at_position(self, pos):
         if self.head is None:
@@ -84,11 +92,11 @@ class LinkedList:
         while i < pos - 1 and n is not None:
             n = n.next
             i += 1
-        if n is None:
+        if n is None or n.next is None:
             print('Index outbound')
             return
+        print(f'Node at position {pos} i.e node of value {n.next.data} deleted')
         n.next = n.next.next
-        print(f'Node at position {pos} deleted')
 
 
 mylist = LinkedList()
@@ -123,7 +131,7 @@ while (True):
     elif choice == '6':
         mylist.delete_at_end()
     elif choice == '7':
-        pos = int(input('Enter position of node to delted::'))
+        pos = int(input('Enter position of node to deleted:'))
         mylist.delete_at_position(pos)
     elif choice == '8':
         break
