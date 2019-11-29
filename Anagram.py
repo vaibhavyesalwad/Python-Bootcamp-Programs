@@ -4,7 +4,7 @@ def anagram(first,second):
             return False
     else:
         return True
-
+num2 = 100
 
 first = input('Enter first word:')
 second = input('Enter second word:')
