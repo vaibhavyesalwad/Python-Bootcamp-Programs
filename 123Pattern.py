@@ -7,3 +7,6 @@ for i in range(1, lines+1):
         numstr += str(num)
         num += 1
     print(numstr)
+num2 = 100    
+    
+    
