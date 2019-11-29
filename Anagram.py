@@ -5,6 +5,7 @@ def anagram(first,second):
     else:
         return True
 
+num2 = 10
 
 first = input('Enter first word:')
 second = input('Enter second word:')

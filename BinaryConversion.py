@@ -1,5 +1,4 @@
-# converting decimal to binary
-
+"""Convert decimal to binary & vice versa"""
 number = int(input('Enter number:'))
 binary_str = ''
 
@@ -12,7 +11,10 @@ length = len(binary_str)
 if length < 8:
     binary_str = '0'*(8-length) + binary_str
 
-print(binary_str[:4],binary_str[4:])
+print(binary_str[:4], binary_str[4:])
+
+print('After swapping nibbles:', binary_str[4:], binary_str[:4])
+
 
 # converting binary to decimal
 
@@ -21,7 +23,7 @@ power = 0
 num = 0
 
 for i in binary[::-1]:
-    num += pow(2,power)*int(i)
+    num += (2**power)*int(i)
     power += 1
 
 print(num)
