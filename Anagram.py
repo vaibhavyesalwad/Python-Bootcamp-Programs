@@ -7,6 +7,7 @@ def anagram(first,second):
 
 num2 = 10
 
+
 first = input('Enter first word:')
 second = input('Enter second word:')
 
